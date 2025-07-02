@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonya's Art Portfolio</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+
+    header {
+      background-color: #fef0e3;
+      padding: 60px 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      animation: slideUp 1s ease;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #666;
+    }
+
+    .lang-buttons {
+      margin-top: 20px;
+    }
+
+    .lang-buttons button {
+      margin: 5px;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00cc99;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .lang-buttons button:hover {
+      background-color: #009977;
+    }
+
+    section {
+      padding: 50px 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact {
+      background-color: #eee;
+      padding: 40px 20px;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="title">Sonya Howard</h1>
+    <p id="subtitle">Modern Ukiyo-e × Pop Art | Crochet & Visual Storytelling</p>
+    <div class="lang-buttons">
+      <button onclick="setLanguage('en')">🇬🇧 English</button>
+      <button onclick="setLanguage('jp')">🇯🇵 日本語</button>
+      <button onclick="setLanguage('nl')">🇳🇱 Nederlands</button>
+    </div>
+  </header>
+
+  <section>
+    <h2 id="galleryTitle">My Art Gallery</h2>
+    <div class="gallery">
+      <img src="art1.jpg" alt="Artwork 1" />
+      <img src="art2.jpg" alt="Artwork 2" />
+      <img src="art3.jpg" alt="Artwork 3" />
+    </div>
+  </section>
+
+  <section>
+    <h2 id="aboutTitle">About Me</h2>
+    <p id="aboutText">I blend traditional Japanese art with modern pop color palettes. Every piece tells a story — sometimes playful, sometimes haunting.</p>
+  </section>
+
+  <section class="contact">
+    <h2 id="contactTitle">Contact</h2>
+    <p id="emailText">Email: sonya@example.com</p>
+    <p id="socialText">Instagram: @sonyadraws</p>
+  </section>
+
+  <footer>
+    © 2025 Sonya Howard | All Rights Reserved
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Sonya Howard",
+        subtitle: "Modern Ukiyo-e × Pop Art | Crochet & Visual Storytelling",
+        galleryTitle: "My Art Gallery",
+        aboutTitle: "About Me",
+        aboutText: "I blend traditional Japanese art with modern pop color palettes. Every piece tells a story — sometimes playful, sometimes haunting.",
+        contactTitle: "Contact",
+        emailText: "Email: sonya@example.com",
+        socialText: "Instagram: @sonyadraws"
+      },
+      jp: {
+        title: "ソニア・ハワード",
+        subtitle: "現代の浮世絵 × ポップアート | かぎ針編みとストーリーテリング",
+        galleryTitle: "アートギャラリー",
+        aboutTitle: "自己紹介",
+        aboutText: "日本の伝統芸術に現代のポップな色使いを融合させ、作品ごとにストーリーを描いています。",
+        contactTitle: "連絡先",
+        emailText: "メール: sonya@example.com",
+        socialText: "インスタグラム: @sonyadraws"
+      },
+      nl: {
+        title: "Sonya Howard",
+        subtitle: "Moderne Ukiyo-e × Popart | Haakprojecten & Visueel Verhaal",
+        galleryTitle: "Mijn Kunstgalerij",
+        aboutTitle: "Over Mij",
+        aboutText: "Ik combineer traditionele Japanse kunst met moderne popkleuren. Elk werk vertelt een uniek verhaal.",
+        contactTitle: "Contact",
+        emailText: "E-mail: sonya@example.com",
+        socialText: "Instagram: @sonyadraws"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("subtitle").innerText = translations[lang].subtitle;
+      document.getElementById("galleryTitle").innerText = translations[lang].galleryTitle;
+      document.getElementById("aboutTitle").innerText = translations[lang].aboutTitle;
+      document.getElementById("aboutText").innerText = translations[lang].aboutText;
+      document.getElementById("contactTitle").innerText = translations[lang].contactTitle;
+      document.getElementById("emailText").innerText = translations[lang].emailText;
+      document.getElementById("socialText").innerText = translations[lang].socialText;
+    }
+  </script>
+</body>
+</html>
